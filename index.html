@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThreatLens — See Everything. Miss Nothing.</title>
+  <meta name="description" content="ThreatLens delivers next-gen zero-trust endpoint observability, real-time process lineage, Shannon entropy malware detection, and 100% offline explainable AI for Windows 10 & 11.">
+  <meta name="keywords" content="ThreatLens, Endpoint Security, EDR, Zero Trust, Explainable AI, Process Lineage, Windows Security, Shannon Entropy, Malware Detection">
+  <meta name="author" content="Steby Varghese">
+  <meta property="og:title" content="ThreatLens — See Everything. Miss Nothing.">
+  <meta property="og:description" content="Real-time endpoint telemetry, process lineage, PE entropy heuristics, and a 5-point explainability engine — 100% offline, zero cloud.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/threatlens.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ThreatLens — See Everything. Miss Nothing.">
+  <meta name="twitter:description" content="Zero-Trust Endpoint Observability · Heuristic Defense · 100% Offline Explainable AI for Windows.">
+  <link rel="icon" type="image/x-icon" href="assets/threatlens.ico">
+  <link rel="apple-touch-icon" href="assets/threatlens_128.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <img src="assets/threatlens.png" alt="ThreatLens" class="brand-logo">
+      <span class="brand-name">ThreatLens<span> //</span></span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#gallery">Interface</a></li>
+        <li><a href="#simulator">Simulator</a></li>
+        <li><a href="#features">Sentinels</a></li>
+        <li><a href="#comparison">Comparison</a></li>
+        <li><a href="#decoder">Log Decoder</a></li>
+        <li><a href="#ai-assistant">Ask AI</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-end">
+      <div class="nav-pill"><span class="pulse-dot"></span> SHIELD ONLINE</div>
+      <a href="https://github.com/stebyvarghese1/ThreatLens" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub ↗</a>
+      <a href="https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/ThreatLens_Setup.exe" class="btn btn-primary btn-sm">
+        Download v1.0
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="#philosophy">Philosophy</a>
+  <a href="#gallery">Interface Showcase</a>
+  <a href="#simulator">Interactive Simulator</a>
+  <a href="#features">Defense Sentinels</a>
+  <a href="#comparison">Definitive Comparison</a>
+  <a href="#decoder">Windows Log Decoder</a>
+  <a href="#ai-assistant">Offline AI Assistant</a>
+  <a href="#architecture">Architecture</a>
+  <a href="#download">Download v1.0</a>
+  <a href="https://github.com/stebyvarghese1/ThreatLens" target="_blank" rel="noopener" class="btn btn-primary">GitHub Repository ↗</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <canvas id="particles-canvas"></canvas>
+
+  <div class="hero-inner">
+    <a href="https://github.com/stebyvarghese1/ThreatLens/releases/tag/v1" target="_blank" rel="noopener" class="hero-badge">
+      <span class="dot"></span>
+      <span>ThreatLens v1.0 — <strong>Stable Release Now Available</strong> →</span>
+    </a>
+
+    <h1 class="hero-title">
+      See Everything.<br>
+      <span class="gt-cyan">Miss Nothing.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Traditional antivirus is an authoritarian black box that begs for blind trust.
+      ThreatLens delivers <strong>zero-trust transparency</strong> — real-time process lineage, heuristic PE analysis, hardware telemetry, and a 5-point explainability engine. <strong>100% offline. Zero cloud.</strong>
+    </p>
+
+    <div class="hero-ctas">
+      <a href="https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/ThreatLens_Setup.exe" class="btn btn-primary btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download Setup (Windows x64)
+      </a>
+      <a href="#simulator" class="btn btn-ghost btn-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Launch Live Simulator
+      </a>
+    </div>
+
+    <div class="hero-terminal-line">
+      <span>Zero cloud telemetry</span>
+      <span>Python 3.10+, Windows 10 / 11</span>
+      <span>59 / 59 tests passing</span>
+      <span>MIT Open Source</span>
+    </div>
+  </div>
+
+  <!-- Interactive App Screenshot Showcase -->
+  <div class="hero-screenshot-wrap" id="gallery">
+    <div class="gallery-tabs-wrap">
+      <button class="gallery-tab-btn active" data-img="assets/screenshots/hud_overview.png" data-title="ThreatLens // Command Center HUD [MAXIMIZED]" data-status="LIVE WAL STREAM" data-badges="Dynamic 0–100 Security Gauge,Native Windows PDH GPU,RAM/CPU Telemetry,9 Active Shields">
+        <span>⚡</span> 01. Overview HUD &amp; Hardware
+      </button>
+      <button class="gallery-tab-btn" data-img="assets/screenshots/telemetry_why.png" data-title="ThreatLens // Live Telemetry &amp; Why? Engine" data-status="STREAMING KERNEL BUS" data-badges="Streaming Userland/Kernel Bus,5-Point Explainability Modal,Zero-Cloud Architecture,Offline Sub-ms Logs">
+        <span>📡</span> 02. Live Telemetry &amp; "Why?"
+      </button>
+      <button class="gallery-tab-btn" data-img="assets/screenshots/forensics_lineage.png" data-title="ThreatLens // Forensic Lineage &amp; Threat Scanner" data-status="ENTROPY ANALYZER READY" data-badges="Parent-Child Execution Tree,Shannon PE Entropy >7.4,Reversible XOR Vault,MITRE ATT&amp;CK Mapping">
+        <span>🔬</span> 03. Forensics &amp; Process Lineage
+      </button>
+    </div>
+
+    <div class="screenshot-glow"></div>
+    <div class="screenshot-frame">
+      <div class="screenshot-inner">
+        <div class="screenshot-titlebar">
+          <div class="titlebar-dots">
+            <span class="titlebar-dot dot-red"></span>
+            <span class="titlebar-dot dot-yellow"></span>
+            <span class="titlebar-dot dot-green"></span>
+          </div>
+          <span class="titlebar-title" id="gallery-title">ThreatLens // Command Center HUD [MAXIMIZED]</span>
+          <span class="titlebar-status" id="gallery-status"><span class="pulse-dot" style="width:6px;height:6px"></span> LIVE WAL STREAM</span>
+        </div>
+        <div style="position:relative;">
+          <img src="assets/screenshots/hud_overview.png"
+               id="gallery-img"
+               alt="ThreatLens Command Center — real-time security HUD with process lineage, hardware telemetry, and threat detection"
+               class="screenshot-img" loading="eager">
+          <div class="screenshot-scan"></div>
+        </div>
+        <div class="gallery-caption-bar">
+          <div class="gallery-badge-row" id="gallery-badges">
+            <span class="pill">Dynamic 0–100 Security Gauge</span>
+            <span class="pill">Native Windows PDH GPU</span>
+            <span class="pill">RAM/CPU Telemetry</span>
+            <span class="pill">9 Active Shields</span>
+          </div>
+          <div>Captured live on Windows 11 · PySide6 6.7+ Cyber HUD</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     TECH LOGOS STRIP
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="logos-section">
+  <p class="logos-label">Engineered on the most trusted Windows security primitives</p>
+  <div class="logos-track">
+    <div class="logos-scroll" id="logos-scroll">
+      <div class="logo-chip"><span class="logo-chip-icon">🐍</span>Python 3.10+</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🪟</span>PySide6 / Qt 6</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🗄️</span>SQLite WAL</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🔬</span>Shannon Entropy</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🧠</span>CyberNLP &lt;2MB</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🛡️</span>Windows NetSh</div>
+      <div class="logo-chip"><span class="logo-chip-icon">📊</span>Windows PDH</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🔒</span>XOR Vault</div>
+      <div class="logo-chip"><span class="logo-chip-icon">⚙️</span>Win32 API</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🧬</span>pefile</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="logo-chip"><span class="logo-chip-icon">🐍</span>Python 3.10+</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🪟</span>PySide6 / Qt 6</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🗄️</span>SQLite WAL</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🔬</span>Shannon Entropy</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🧠</span>CyberNLP &lt;2MB</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🛡️</span>Windows NetSh</div>
+      <div class="logo-chip"><span class="logo-chip-icon">📊</span>Windows PDH</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🔒</span>XOR Vault</div>
+      <div class="logo-chip"><span class="logo-chip-icon">⚙️</span>Win32 API</div>
+      <div class="logo-chip"><span class="logo-chip-icon">🧬</span>pefile</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     STATS BAR
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section-sm">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-val gt-em">59/59</div>
+        <div class="stat-lbl">Tests Passing</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val gt-cyan">&lt; 2MB</div>
+        <div class="stat-lbl">Embedded NLP Model</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">0.45s</div>
+        <div class="stat-lbl">HUD Boot Time</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val gt-multi">100%</div>
+        <div class="stat-lbl">Offline &amp; Private</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PHILOSOPHY: KILLING THE BLACK BOX
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="philosophy">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">The Philosophy</div>
+      <h2>Killing the <span class="gt-cyan">Black Box</span></h2>
+      <p>When your antivirus fires an alert, what does it actually tell you? A vague name. Zero context. No lineage. No explanation. ThreatLens believes you have the right to understand every action happening on your own machine.</p>
+    </div>
+
+    <div class="philosophy-grid">
+      <!-- Legacy Card -->
+      <div class="philosophy-card legacy">
+        <div class="philo-tag bad">❌ Legacy Antivirus</div>
+        <h3>The Black Box</h3>
+        <p class="sub">A pop-up that offers nothing but anxiety and a vague quarantine confirmation.</p>
+
+        <div class="alert-dialog">
+          <div class="alert-row">
+            <span class="alert-key">Alert:</span>
+            <span class="alert-val">Trojan.Win32.Generic detected</span>
+          </div>
+          <div class="alert-row">
+            <span class="alert-key">Action:</span>
+            <span class="alert-val">Quarantined</span>
+          </div>
+          <div class="alert-row">
+            <span class="alert-key">Origin:</span>
+            <span class="alert-val dim">[Unavailable]</span>
+          </div>
+          <div class="alert-row">
+            <span class="alert-key">Reason:</span>
+            <span class="alert-val dim">[Proprietary signature]</span>
+          </div>
+        </div>
+
+        <ul class="check-list">
+          <li><span class="icon">✕</span> No process lineage — who launched what?</li>
+          <li><span class="icon">✕</span> Vague classification, no forensic detail</li>
+          <li><span class="icon">✕</span> File metadata sent to cloud servers</li>
+          <li><span class="icon">✕</span> Alert fatigue — false positive or real threat?</li>
+        </ul>
+      </div>
+
+      <!-- ThreatLens Card -->
+      <div class="philosophy-card modern">
+        <div class="philo-tag good">⚡ ThreatLens</div>
+        <h3>Zero-Trust Transparency</h3>
+        <p class="sub">Every process, socket, registry write, and entropy spike — mapped, explained, and scored.</p>
+
+        <div class="alert-dialog">
+          <div class="alert-row">
+            <span class="alert-key">Event:</span>
+            <span class="alert-val">powershell.exe executed hidden -enc Base64 stager</span>
+          </div>
+          <div class="alert-row">
+            <span class="alert-key">Why?</span>
+            <span class="alert-val hi">"Script attempted to evade string filters and load payload in-memory."</span>
+          </div>
+          <div class="alert-row">
+            <span class="alert-key">Trace:</span>
+            <span class="alert-val">edge.exe → invoice.zip → cmd.exe → powershell.exe</span>
+          </div>
+          <div class="alert-row">
+            <span class="alert-key">Action:</span>
+            <span class="alert-val good">Process tree killed · Binary isolated to XOR Vault</span>
+          </div>
+        </div>
+
+        <ul class="check-list">
+          <li><span class="icon">✓</span> Full parent-child process lineage in real time</li>
+          <li><span class="icon">✓</span> 5-point "Why?" grammar — What, Who, Where, Why, Action</li>
+          <li><span class="icon">✓</span> 100% airgapped — no cloud, no account, no telemetry</li>
+          <li><span class="icon">✓</span> Plain-English Windows event log translator</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     INTERACTIVE CYBER SIMULATOR
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="simulator">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Live Interactive Simulator</div>
+      <h2>Experience ThreatLens <span class="gt-cyan">in Action</span></h2>
+      <p>Select an attack scenario to watch ThreatLens's real-time telemetry pipeline react. Hit <strong>[💡 WHY?]</strong> on any event to open the 5-point Explainability Engine.</p>
+    </div>
+
+    <div class="sim-shell">
+      <!-- Toolbar -->
+      <div class="sim-bar">
+        <div class="sim-bar-left">
+          <img src="assets/threatlens_32.png" width="22" height="22" alt="ThreatLens">
+          <span class="sim-bar-title">ThreatLens // TELEMETRY_SIMULATOR</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="nav-pill" id="sim-status-pill">ELEVATED RISK DETECTED</div>
+        </div>
+      </div>
+
+      <div class="sim-body">
+        <!-- Sidebar -->
+        <div class="sim-sidebar">
+          <div class="sim-sidebar-label">Trigger Scenario</div>
+
+          <button class="scenario-btn active" data-scenario="powershell_obfuscated">
+            <div class="sc-name"><span>Encoded PowerShell</span><span class="badge-warn">HIGH</span></div>
+            <span class="sc-desc">Base64 stager launched from suspicious VBS script.</span>
+            <span class="sc-mitre">MITRE T1059.001</span>
+          </button>
+
+          <button class="scenario-btn" data-scenario="canary_ransomware">
+            <div class="sc-name"><span>Ransomware Tripwire</span><span class="badge-crit">CRIT</span></div>
+            <span class="sc-desc">Mass bulk encryption attempt on canary honeypot files.</span>
+            <span class="sc-mitre">MITRE T1486</span>
+          </button>
+
+          <button class="scenario-btn" data-scenario="persistence_registry">
+            <div class="sc-name"><span>Startup Run Key</span><span class="badge-med">MED</span></div>
+            <span class="sc-desc">Unsigned binary registering auto-boot persistence.</span>
+            <span class="sc-mitre">MITRE T1547.001</span>
+          </button>
+
+          <button class="scenario-btn" data-scenario="crypto_clipboard">
+            <div class="sc-name"><span>Clipboard Hijack</span><span class="badge-crit">CRIT</span></div>
+            <span class="sc-desc">Trojan swapping Bitcoin wallet addresses in clipboard.</span>
+            <span class="sc-mitre">MITRE T1115</span>
+          </button>
+
+          <button class="btn btn-ghost btn-sm" id="sim-reset-btn" style="margin-top:auto">↺ Reset to Baseline</button>
+        </div>
+
+        <!-- Main Panel -->
+        <div class="sim-panel">
+          <!-- Gauge + HW Meters -->
+          <div class="gauge-row">
+            <div class="gauge-box">
+              <div class="gauge-ring">
+                <svg class="gauge-svg" viewBox="0 0 100 100">
+                  <circle class="gauge-bg" cx="50" cy="50" r="40" fill="none" stroke-width="8"/>
+                  <circle class="gauge-fg" id="gauge-fg" cx="50" cy="50" r="40" fill="none" stroke-width="8" stroke-dasharray="251.3" stroke-dashoffset="120"/>
+                </svg>
+                <span class="gauge-num" id="gauge-num">52</span>
+              </div>
+              <span class="gauge-lbl">Security Score</span>
+            </div>
+
+            <div class="hw-meters">
+              <div class="hw-item">
+                <div class="hw-top"><span>⚡ CPU</span><span id="hw-cpu-val">64%</span></div>
+                <div class="hw-bar"><div class="hw-fill" id="hw-cpu-bar" style="width:64%"></div></div>
+              </div>
+              <div class="hw-item">
+                <div class="hw-top"><span>🧠 RAM</span><span id="hw-ram-val">41%</span></div>
+                <div class="hw-bar"><div class="hw-fill" id="hw-ram-bar" style="width:41%;background:#0ea5e9"></div></div>
+              </div>
+              <div class="hw-item">
+                <div class="hw-top"><span>🎮 GPU (PDH)</span><span id="hw-gpu-val">12%</span></div>
+                <div class="hw-bar"><div class="hw-fill" id="hw-gpu-bar" style="width:12%;background:#8b5cf6"></div></div>
+              </div>
+              <div class="hw-item">
+                <div class="hw-top"><span>🌐 Network</span><span id="hw-net-val">1.4 MB/s</span></div>
+                <div class="hw-bar"><div class="hw-fill" style="width:45%;background:#10b981"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Feed -->
+          <div class="feed-box">
+            <div class="feed-head">
+              <span>LIVE EVENT STREAM // SQLite WAL Bus<span class="blink"> ▮</span></span>
+              <span style="color:#38bdf8">Click [💡 WHY?] for 5-point analysis</span>
+            </div>
+            <div class="feed-list" id="sim-feed-stream">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Process Lineage -->
+          <div class="lineage-box">
+            <div class="lineage-label">Forensic Process Lineage</div>
+            <div class="lineage-chain" id="sim-lineage-chain"><!-- JS --></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why? Modal -->
+<div class="modal-bg" id="modal-bg">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3><span>💡</span><span id="modal-title">Explainability Breakdown</span></h3>
+      <button class="modal-close" id="modal-close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="fivepoint">
+        <div class="tag">1 · What Happened?</div>
+        <div class="text" id="m-what">—</div>
+      </div>
+      <div class="fivepoint">
+        <div class="tag">2 · Who Did It?</div>
+        <div class="text" id="m-who">—</div>
+      </div>
+      <div class="fivepoint">
+        <div class="tag">3 · Where On Disk?</div>
+        <div class="text" id="m-where">—</div>
+      </div>
+      <div class="fivepoint">
+        <div class="tag">4 · Why Does It Matter?</div>
+        <div class="text" id="m-why">—</div>
+      </div>
+      <div class="fivepoint action">
+        <div class="tag">5 · Recommended Action</div>
+        <div class="text" id="m-action">—</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     FEATURE GRID — 9 SENTINELS
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Active Defense Sentinels</div>
+      <h2>9 Native Shields.<br><span class="gt-cyan">Zero Dependencies.</span></h2>
+      <p>Nine high-frequency, native Windows sentinels that replace resource-heavy cloud scanning with sub-millisecond endpoint telemetry at the kernel level.</p>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Hardware Health Sentinel</h3>
+        <p>Real-time CPU, RAM, GPU (native Windows PDH counters), disk, and network telemetry without third-party kernel drivers.</p>
+        <span class="tech-tag">Windows PDH · psutil</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Application Firewall Isolator</h3>
+        <p>Behavioral baselines + one-click Windows NetSh firewall isolation to instantly sever any application's inbound and outbound network connections.</p>
+        <span class="tech-tag">NetSh · AdvFirewall</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔑</div>
+        <h3>Registry Persistence Sentinel</h3>
+        <p>Forensic surveillance of Run / RunOnce hive keys, Task Scheduler, Windows Services, and USB hardware events with MITRE ATT&amp;CK mapping and CSV export.</p>
+        <span class="tech-tag">winreg · CIM_SERVICE</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3>CyberNLP Semantic Engine</h3>
+        <p>Embedded &lt;2MB NLP model decodes obfuscated command strings and maps them to MITRE ATT&amp;CK tactics with 99%+ accuracy. Fully offline.</p>
+        <span class="tech-tag">CyberNLP · &lt;2MB Model</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">👁️</div>
+        <h3>Process Lineage Sentinel</h3>
+        <p>Constructs real-time parent-child execution trees. Intercepts LOLBins and obfuscated flags like <code style="color:#38bdf8">-enc</code>, <code style="color:#38bdf8">IEX</code>, and <code style="color:#38bdf8">bypass</code>.</p>
+        <span class="tech-tag">Win32 API · psutil</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <h3>Shannon Entropy PE Deconstruction</h3>
+        <p>Inspects PE headers in real time. Entropy &gt;7.4 → packed/crypted binary flagged instantly. Catches ransomware and loaders before they execute.</p>
+        <span class="tech-tag">pefile · Shannon Math</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>XOR Cryptographic Vault</h3>
+        <p>Reversible byte-transformation quarantine chamber. Scrambles PE headers to make malicious executables mathematically inert. Zero data loss on false positives.</p>
+        <span class="tech-tag">Custom XOR Cryptography</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🍯</div>
+        <h3>Canary Ransomware Decoys</h3>
+        <p>Hidden tripwire files in sensitive directories. Any ransomware that touches a canary before real files triggers autonomous emergency containment.</p>
+        <span class="tech-tag">Honeypot Tripwires</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>"Ask ThreatLens" AI Assistant</h3>
+        <p>100% offline conversational assistant with multi-turn dialogue memory. Ask <em>"what is powershell.exe doing?"</em> and get an instant, accurate answer.</p>
+        <span class="tech-tag">Multi-Turn NLP Memory</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     THE DEFINITIVE COMPARISON MATRIX
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="comparison">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">The Definitive Comparison</div>
+      <h2>Engineered for Transparency.<br><span class="gt-cyan">Not Blind Obedience.</span></h2>
+      <p>How ThreatLens compares against default operating system protections, legacy consumer suites, and costly corporate cloud agents.</p>
+    </div>
+
+    <div class="comp-table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th style="width:28%">Capability / Dimension</th>
+            <th class="th-tl" style="width:24%">⚡ ThreatLens v1.0</th>
+            <th style="width:16%">Windows Defender</th>
+            <th style="width:16%">Legacy AV (Norton/McAfee)</th>
+            <th style="width:16%">Cloud EDR (CrowdStrike)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="comp-feature-name">Data Sovereignty &amp; Offline Privacy</span>
+              <span class="comp-feature-sub">Zero packets sent outside the machine</span>
+            </td>
+            <td class="td-tl"><span class="tag-good">✓ 100% Offline (Airgapped)</span></td>
+            <td><span class="tag-warn">⚠️ Telemetry sent to Microsoft</span></td>
+            <td><span class="tag-bad">✕ Cloud file scanning</span></td>
+            <td><span class="tag-bad">✕ Full event streaming to cloud</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="comp-feature-name">Threat Explainability ("Why?" Engine)</span>
+              <span class="comp-feature-sub">Translates alerts into 5-point plain grammar</span>
+            </td>
+            <td class="td-tl"><span class="tag-good">✓ 5-Point Neural Grammar</span></td>
+            <td><span class="tag-bad">✕ Generic Trojan Name</span></td>
+            <td><span class="tag-bad">✕ Vague quarantine modal</span></td>
+            <td><span class="tag-warn">⚠️ Cryptic SOC analyst tags</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="comp-feature-name">Process Lineage &amp; Execution Trees</span>
+              <span class="comp-feature-sub">Tracks parent, grandparent, and child PIDs</span>
+            </td>
+            <td class="td-tl"><span class="tag-good">✓ Real-time Tree Visualizer</span></td>
+            <td><span class="tag-bad">✕ None (Alert only)</span></td>
+            <td><span class="tag-bad">✕ None</span></td>
+            <td><span class="tag-good">✓ Available ($$$ Enterprise)</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="comp-feature-name">Shannon Entropy PE Deconstruction</span>
+              <span class="comp-feature-sub">Flags encrypted/packed executables (&gt;7.4)</span>
+            </td>
+            <td class="td-tl"><span class="tag-good">✓ Real-time Math Analysis</span></td>
+            <td><span class="tag-bad">✕ Hash signature matching</span></td>
+            <td><span class="tag-bad">✕ Signature files</span></td>
+            <td><span class="tag-good">✓ Cloud ML Heuristics</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="comp-feature-name">Hardware &amp; System Observability</span>
+              <span class="comp-feature-sub">CPU, RAM, native Windows PDH GPU, disk, net</span>
+            </td>
+            <td class="td-tl"><span class="tag-good">✓ Integrated Cyber HUD</span></td>
+            <td><span class="tag-bad">✕ Separate Task Manager</span></td>
+            <td><span class="tag-bad">✕ None (High RAM drag)</span></td>
+            <td><span class="tag-warn">⚠️ Sensor-only</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="comp-feature-name">Quarantine Technology</span>
+              <span class="comp-feature-sub">Reversibility with zero file loss</span>
+            </td>
+            <td class="td-tl"><span class="tag-good">✓ Reversible XOR Vault</span></td>
+            <td><span class="tag-warn">⚠️ Aggressive auto-delete</span></td>
+            <td><span class="tag-warn">⚠️ Proprietary container</span></td>
+            <td><span class="tag-warn">⚠️ Cloud quarantine</span></td>
+          </tr>
+          <tr>
+            <td>
+              <span class="comp-feature-name">Pricing &amp; Open Source License</span>
+              <span class="comp-feature-sub">Cost per endpoint / inspection tier</span>
+            </td>
+            <td class="td-tl"><span class="tag-good">✓ 100% Free · MIT License</span></td>
+            <td><span class="tag-good">✓ Included with Windows</span></td>
+            <td><span class="tag-bad">✕ $59.99/yr subscription</span></td>
+            <td><span class="tag-bad">✕ $180+/endpoint/yr</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PLAIN-ENGLISH LOG DECODER
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="decoder">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Universal Log Translator</div>
+      <h2>Cryptic Windows XML <span class="gt-cyan">→ Plain English</span></h2>
+      <p>No more wall-of-text XML, hex error codes, or unparsed GUIDs. ThreatLens translates every Windows Security event into calm, actionable human language.</p>
+    </div>
+
+    <div class="translator-shell">
+      <div class="trans-tabs">
+        <button class="trans-tab active" data-event="4625">4625 · Brute-Force Logon</button>
+        <button class="trans-tab" data-event="7045">7045 · Service Installed</button>
+        <button class="trans-tab" data-event="1102">1102 · Audit Log Wiped</button>
+        <button class="trans-tab" data-event="4104">4104 · PowerShell ScriptBlock</button>
+      </div>
+
+      <div class="trans-body">
+        <div class="trans-col">
+          <div class="trans-col-head">
+            <h4>❌ Raw Windows EVTX Payload</h4>
+            <span style="font-family:var(--font-mono);font-size:.7rem;color:#ef4444">UNPARSED XML</span>
+          </div>
+          <pre class="raw-code" id="trans-raw">&lt;Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event"&gt;
+  &lt;System&gt;
+    &lt;Provider Name="Microsoft-Windows-Security-Auditing" /&gt;
+    &lt;EventID&gt;4625&lt;/EventID&gt;
+    &lt;TimeCreated SystemTime="2026-09-17T13:42:10Z" /&gt;
+    &lt;Channel&gt;Security&lt;/Channel&gt;
+  &lt;/System&gt;
+  &lt;EventData&gt;
+    &lt;Data Name="TargetUserName"&gt;Administrator&lt;/Data&gt;
+    &lt;Data Name="SubStatus"&gt;0xc000006a&lt;/Data&gt;
+    &lt;Data Name="FailureReason"&gt;%%2313&lt;/Data&gt;
+    &lt;Data Name="IpAddress"&gt;194.26.29.112&lt;/Data&gt;
+    &lt;Data Name="IpPort"&gt;58412&lt;/Data&gt;
+  &lt;/EventData&gt;
+&lt;/Event&gt;</pre>
+        </div>
+
+        <div class="trans-col">
+          <div class="trans-col-head">
+            <h4>⚡ ThreatLens Plain-English Translation</h4>
+            <span style="font-family:var(--font-mono);font-size:.7rem;color:#38bdf8">AI DECODED</span>
+          </div>
+          <div class="decoded-box">
+            <span class="verdict-pill vp-danger" id="trans-verdict">🚨 THREAT DETECTED · SUSPICIOUS IP FLAGGED</span>
+            <div class="decoded-headline" id="trans-headline">⚠️ 42 Rapid Failed Logins — Brute-Force Attack In Progress</div>
+            <p class="decoded-desc" id="trans-desc">
+              Someone attempted to log into the "Administrator" account 42 times in 15 seconds from remote IP 194.26.29.112. ThreatLens identified this as an automated credential-stuffing or dictionary attack.
+            </p>
+            <div style="margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:var(--font-mono);font-size:.7rem;color:var(--col-text-3)">Forensic Dropzone: ACTIVE</span>
+              <span style="font-family:var(--font-mono);font-size:.7rem;color:var(--col-cyan)">Supports: .evtx .log .json .csv</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     OFFLINE AI ASSISTANT TERMINAL DEMO
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="ai-assistant">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Conversational Security Intelligence</div>
+      <h2>Ask ThreatLens <span class="gt-cyan">Anything.</span></h2>
+      <p>Powered by an embedded, airgapped &lt;2MB CyberNLP model. Ask plain-English questions about running processes, system health, and security events with multi-turn context memory.</p>
+    </div>
+
+    <div class="ai-terminal-card">
+      <div class="ai-terminal-bar">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:1.2rem">🧠</span>
+          <span style="font-family:var(--font-head);font-weight:700;font-size:.95rem">ThreatLens // CyberNLP Assistant Sentry</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <span style="font-family:var(--font-mono);font-size:.7rem;color:var(--col-text-3)">ENGINE: OFFLINE &lt;2MB</span>
+          <div class="nav-pill" style="font-size:.65rem;padding:3px 8px"><span class="pulse-dot" style="width:5px;height:5px"></span> 0ms LOCAL INFERENCE</div>
+        </div>
+      </div>
+
+      <div class="ai-chat-window" id="ai-chat-window">
+        <div class="ai-bubble ai-bubble-user" id="ai-user-msg">
+          What is powershell.exe doing on my machine right now?
+        </div>
+        <div class="ai-bubble ai-bubble-bot" id="ai-bot-msg">
+          <div class="ai-bot-header">
+            <span>🛡️ ThreatLens CyberNLP Engine</span>
+            <span style="color:var(--col-text-3)">· Process Inspector</span>
+          </div>
+          <p id="ai-bot-text">
+            <strong>powershell.exe</strong> (PID: 8192) was launched 4 seconds ago by <code>cscript.exe</code> with flag <code>-enc JABj...</code>. 
+            CyberNLP flagged this execution because Base64 encoding is commonly used to evade static antivirus string filters. 
+            Lineage trace confirms origin from <code>invoice.vbs</code> in your Downloads folder. 
+            ThreatLens has temporarily paused child threads and recommends terminating the process tree.
+          </p>
+        </div>
+      </div>
+
+      <div class="ai-prompts-bar">
+        <span class="ai-prompts-label">Try interactive prompt queries:</span>
+        <div class="ai-chips-list" id="ai-chips-list">
+          <button class="ai-chip active" data-q="powershell">⚡ "What is powershell.exe doing?"</button>
+          <button class="ai-chip" data-q="cpu">🔥 "Why did my CPU spike to 64%?"</button>
+          <button class="ai-chip" data-q="canary">🍯 "How do Canary Decoys catch ransomware?"</button>
+          <button class="ai-chip" data-q="xor">🔒 "Can I restore quarantined files from XOR Vault?"</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     ARCHITECTURE PIPELINE
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="architecture">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Under the Hood</div>
+      <h2>High-Throughput <span class="gt-cyan">Telemetry Pipeline</span></h2>
+      <p>Engineered from first principles — multi-producer async queues, SQLite WAL write-ahead logging, and thread-safe RLock concurrency ensuring sub-millisecond event persistence.</p>
+    </div>
+
+    <div class="pipeline">
+      <div class="pipe-card">
+        <div class="pipe-num">[01] INGESTION</div>
+        <div class="pipe-info">
+          <h4>Native Kernel &amp; Hardware Sensor Bus</h4>
+          <p>PDH counters, psutil process hooks, watchdog file monitors, and winreg listeners capturing live telemetry from the OS core.</p>
+        </div>
+      </div>
+      <div class="pipe-card">
+        <div class="pipe-num">[02] DATA BUS</div>
+        <div class="pipe-info">
+          <h4>Async Thread-Safe Queue &amp; SQLite WAL Writer</h4>
+          <p>Multi-producer queue feeding a dedicated daemon thread with <code style="color:#38bdf8">PRAGMA synchronous = NORMAL</code> — zero write contention, zero corruption.</p>
+        </div>
+      </div>
+      <div class="pipe-card">
+        <div class="pipe-num">[03] HEURISTICS</div>
+        <div class="pipe-info">
+          <h4>Shannon Entropy Math &amp; PE Section Deconstruction</h4>
+          <p>Byte-distribution entropy scoring (flag threshold: &gt;7.4), suspicious import analysis, and live SHA-256 signature blocklists.</p>
+        </div>
+      </div>
+      <div class="pipe-card">
+        <div class="pipe-num">[04] CORRELATION</div>
+        <div class="pipe-info">
+          <h4>Multi-Stage Attack Chain Correlation Engine</h4>
+          <p>Links distributed events over time: <em>Download → Exec → Persistence Key → C2 Socket</em> into a single reconstructed incident timeline.</p>
+        </div>
+      </div>
+      <div class="pipe-card">
+        <div class="pipe-num">[05] SYNTHESIS</div>
+        <div class="pipe-info">
+          <h4>Neural Explainability Grammar &amp; PySide6 HUD</h4>
+          <p>Translates raw syscall data into the 5-point "Why?" grammar and streams live updates to the full-window Command Center.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs Table -->
+    <div class="specs-wrap">
+      <table class="specs-table">
+        <thead>
+          <tr><th>Domain</th><th>Technology</th><th>Implementation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Command Center UI</strong></td><td>PySide6 (Qt 6.7+)</td><td>Custom QSS stylesheets, responsive multi-column cyber HUD, 0.45s cold start</td></tr>
+          <tr><td><strong>Hardware Telemetry</strong></td><td>Windows PDH · psutil</td><td>Native PDH GPU counters, CPU clocks, RAM GB, disk &amp; network throughput</td></tr>
+          <tr><td><strong>Network Isolation</strong></td><td>NetSh · AdvFirewall</td><td>One-click programmatic inbound/outbound socket severing per application PID</td></tr>
+          <tr><td><strong>Event Persistence</strong></td><td>SQLite 3 WAL Mode</td><td>Dedicated daemon thread, sub-ms writes, zero corruption under concurrent load</td></tr>
+          <tr><td><strong>Malware Analysis</strong></td><td>pefile · Shannon Math</td><td>Static header inspection and byte-distribution randomness scoring</td></tr>
+          <tr><td><strong>Local AI</strong></td><td>CyberNLP (&lt;2MB)</td><td>100% offline multi-turn dialogue assistant and explainability synthesis</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     DOWNLOAD CTA
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="download">
+  <div class="container">
+    <div class="cta-card">
+      <div class="label" style="justify-content:center">Official Release · v1.0 Stable</div>
+      <h2>Ready to See <span class="gt-cyan">Everything?</span></h2>
+      <p>One setup wizard. No cloud account. No subscriptions. Just absolute endpoint transparency the moment you launch.</p>
+      <div class="cta-btns">
+        <a href="https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/ThreatLens_Setup.exe" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download ThreatLens_Setup.exe (x64)
+        </a>
+        <a href="https://github.com/stebyvarghese1/ThreatLens" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          View on GitHub
+        </a>
+      </div>
+      <div class="cta-meta">
+        <span>Windows 10 / 11 (64-bit)</span>
+        <span>100% Offline &amp; Private</span>
+        <span>MIT Open Source</span>
+        <span>Python 3.10+ Required</span>
+      </div>
+    </div>
+
+    <!-- Multi-Channel Installation Selector -->
+    <div class="download-tabs" id="download-tabs">
+      <button class="download-tab active" data-tab="tab-exe">🪟 Windows Setup (.exe)</button>
+      <button class="download-tab" data-tab="tab-ps">⚡ PowerShell 1-Click</button>
+      <button class="download-tab" data-tab="tab-src">🐍 Python Source</button>
+      <button class="download-tab" data-tab="tab-winget">📦 Winget Package</button>
+    </div>
+
+    <!-- Panel 1: EXE Installer -->
+    <div class="download-panel active" id="tab-exe">
+      <div class="cli-block">
+        <div class="cli-head">
+          <span>Official Standalone Setup Wizard // Windows 10 &amp; 11 (64-bit)</span>
+          <span style="color:var(--col-emerald);font-family:var(--font-mono)">DIGITALLY VERIFIED</span>
+        </div>
+        <div style="padding:24px 22px;display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+            <div>
+              <div style="font-weight:700;font-size:1.05rem;color:#fff">ThreatLens_Setup.exe (v1.0 Stable)</div>
+              <div style="font-size:.8rem;color:var(--col-text-3);margin-top:2px">Includes PySide6 HUD, CyberNLP model, SQLite WAL engine · 28.4 MB</div>
+            </div>
+            <a href="https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/ThreatLens_Setup.exe" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download Setup Wizard
+            </a>
+          </div>
+          <div style="background:#020510;border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+            <span style="font-family:var(--font-mono);font-size:.74rem;color:var(--col-text-3)">Silent Installation (Admins):</span>
+            <code style="font-family:var(--font-mono);font-size:.76rem;color:var(--col-cyan)">ThreatLens_Setup.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 2: PowerShell -->
+    <div class="download-panel" id="tab-ps">
+      <div class="cli-block">
+        <div class="cli-head">
+          <span>Run via PowerShell (Automated Setup)</span>
+          <button class="copy-btn" data-target="#ps-code">COPY</button>
+        </div>
+        <pre class="cli-code" id="ps-code"><span class="cli-comment"># Launch administrator PowerShell and execute automated bootstrap:</span>
+<span class="cli-cmd">irm https://raw.githubusercontent.com/stebyvarghese1/ThreatLens/main/scripts/install.ps1 | iex</span></pre>
+      </div>
+    </div>
+
+    <!-- Panel 3: Python Source -->
+    <div class="download-panel" id="tab-src">
+      <div class="cli-block">
+        <div class="cli-head">
+          <span>Developer Quick-Start // Git &amp; Python 3.10+</span>
+          <button class="copy-btn" data-target="#src-code">COPY</button>
+        </div>
+        <pre class="cli-code" id="src-code"><span class="cli-comment"># 1. Clone repository</span>
+<span class="cli-cmd">git clone https://github.com/stebyvarghese1/ThreatLens.git && cd ThreatLens</span>
+
+<span class="cli-comment"># 2. Set up virtual environment &amp; install dependencies</span>
+<span class="cli-cmd">python -m venv .venv && .\.venv\Scripts\activate</span>
+<span class="cli-cmd">pip install -r requirements.txt</span>
+
+<span class="cli-comment"># 3. Run complete test suite (59/59 passing)</span>
+<span class="cli-cmd">python -m pytest -v</span>
+
+<span class="cli-comment"># 4. Launch ThreatLens Command Center HUD</span>
+<span class="cli-cmd">python -m app.main</span></pre>
+      </div>
+    </div>
+
+    <!-- Panel 4: Winget -->
+    <div class="download-panel" id="tab-winget">
+      <div class="cli-block">
+        <div class="cli-head">
+          <span>Windows Package Manager (winget)</span>
+          <button class="copy-btn" data-target="#winget-code">COPY</button>
+        </div>
+        <pre class="cli-code" id="winget-code"><span class="cli-comment"># Install directly via Microsoft Windows Package Manager:</span>
+<span class="cli-cmd">winget install --id StebyVarghese.ThreatLens -e --source winget</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     ARCHITECT STATEMENT
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section-sm">
+  <div class="container">
+    <div class="architect-card">
+      <div class="avatar-ring">
+        <img src="https://github.com/stebyvarghese1.png" alt="Steby Varghese" width="88" height="88" onerror="this.replaceWith(document.createTextNode('SV'))">
+      </div>
+      <div>
+        <div class="architect-name">Steby Varghese</div>
+        <div class="architect-role">Security Architect &amp; Software Engineer</div>
+        <p class="architect-quote">"We built ThreatLens because users have a fundamental right to know what their computer is doing. Security software shouldn't behave like an authoritarian black box demanding blind faith — it should serve as a transparent, explainable cyber microscope."</p>
+        <div class="architect-links">
+          <a href="https://github.com/stebyvarghese1" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub</a>
+          <a href="https://stebyvarghese.in/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Portfolio</a>
+          <a href="https://linkedin.com/in/steby-varghese" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">FAQ</div>
+      <h2>Common <span class="gt-cyan">Questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Does ThreatLens replace Windows Defender? <span class="faq-icon">+</span></button>
+        <div class="faq-a">ThreatLens runs alongside Windows Defender, not as a replacement. Where Defender silently blocks with no context, ThreatLens gives you full process lineage, hardware telemetry, explainability AI, and the "Why?" engine — turning your endpoint into a transparent security lab.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does it send any telemetry to the cloud? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Absolutely not. ThreatLens is 100% airgapped. Zero cloud connections, zero accounts, zero file metadata transmission. All analysis including the CyberNLP model inference runs locally and is stored only in your on-disk <code style="color:#38bdf8">threatlens.db</code> SQLite database.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How does Shannon Entropy detect malware? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Shannon Entropy measures byte-distribution randomness on a scale of 0–8. Normal compiled binaries score ~4.5–6.8. Ransomware, packers, and crypters encrypt their payload bytes, which spike the entropy above 7.4. ThreatLens flags these instantly before execution.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is the XOR Vault and can I recover files from it? <span class="faq-icon">+</span></button>
+        <div class="faq-a">When ThreatLens quarantines a file, it applies a reversible XOR transformation that scrambles the PE header's <code style="color:#38bdf8">MZ</code> signature, making the binary mathematically inert — Windows cannot execute it. The transformation is fully reversible if the file turns out to be a false positive, with zero byte loss.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How does the 5-point "Why?" Explainability Engine work? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Every suspicious event is parsed through a structured 5-point grammar: (1) What happened, (2) Who did it — process name and PID, (3) Where on disk, (4) Why it matters to your security, and (5) the recommended action. This empowers both security professionals and everyday users to make confident, informed decisions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="brand" style="margin-bottom:0">
+          <img src="assets/threatlens.png" alt="ThreatLens" class="brand-logo">
+          <span class="brand-name">ThreatLens<span> //</span></span>
+        </a>
+        <p>Next-gen zero-trust endpoint observability and 100% offline explainable AI for Windows 10 and 11. Security belongs in the user's hands.</p>
+        <div class="nav-pill" style="display:inline-flex">ALL SYSTEMS SECURE</div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul class="footer-links">
+          <li><a href="#philosophy">The Philosophy</a></li>
+          <li><a href="#simulator">Live Simulator</a></li>
+          <li><a href="#features">9 Sentinels</a></li>
+          <li><a href="#decoder">Log Decoder</a></li>
+          <li><a href="#architecture">Architecture</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="https://github.com/stebyvarghese1/ThreatLens/releases/download/v1/ThreatLens_Setup.exe">Windows Installer (x64)</a></li>
+          <li><a href="https://github.com/stebyvarghese1/ThreatLens" target="_blank" rel="noopener">Source Code</a></li>
+          <li><a href="https://github.com/stebyvarghese1/ThreatLens/releases" target="_blank" rel="noopener">Release Notes</a></li>
+          <li><a href="https://github.com/stebyvarghese1/ThreatLens/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Architect</h4>
+        <ul class="footer-links">
+          <li><a href="https://github.com/stebyvarghese1" target="_blank" rel="noopener">GitHub Profile</a></li>
+          <li><a href="https://stebyvarghese.in/" target="_blank" rel="noopener">Personal Website</a></li>
+          <li><a href="https://linkedin.com/in/steby-varghese" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 ThreatLens. Engineered for absolute computer visibility by <a href="https://github.com/stebyvarghese1">Steby Varghese</a>.</span>
+      <span>Licensed under <a href="https://github.com/stebyvarghese1/ThreatLens/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a> · 100% Open Source</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/simulator.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
